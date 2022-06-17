@@ -48,13 +48,7 @@ const workers = [
     },
   ];
   
-  //Задан массив объектов workers. Выведите на экран
-  //карточки со следующей информацией по всем работникам:
-  //ID, Имя, Фамилия, Возраст, Зарплата, фото.
-  //Зарплата рассчитывается через умножение ставки на 
-  //количество дней. Карточки должны включать отображение 
-  //фотографии. Примените стили к карточкам: 
-  //width, padding, border, background-color
+  
 
 const rootElem = document.querySelector('#root');
 
@@ -83,4 +77,14 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo, ema
     container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem, emailElem);
     rootElem.append(container);
 })
+
+//Новый комментарий
+
+//Задан массив объектов workers. Выведите на экран
+  //карточки со следующей информацией по всем работникам:
+  //ID, Имя, Фамилия, Возраст, Зарплата, фото.
+  //Зарплата рассчитывается через умножение ставки на 
+  //количество дней. Карточки должны включать отображение 
+  //фотографии. Примените стили к карточкам: 
+  //width, padding, border, background-color
 
