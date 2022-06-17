@@ -75,7 +75,7 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo}){
     photoElem.setAttribute('src', photo);
     photoElem.setAttribute('alt', "photo of worker");
 
-    
+    container.classList.add('container');
 
     container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem);
     rootElem.append(container);
