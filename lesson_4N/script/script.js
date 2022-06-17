@@ -54,7 +54,7 @@ const workers = [
 
 const rootElem = document.querySelector('#root');
 
-workers.forEach(function({id, first_name, last_name, age, rate, days, photo}){
+workers.forEach(function({id, first_name, last_name, age, rate, days, photo, progress}){
     const container = document.createElement('div');
     const idElem = document.createElement('p');
     const firstNameElem = document.createElement('p');
@@ -62,7 +62,9 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo}){
     const ageElem = document.createElement('p');
     const salaryElem = document.createElement('p');
     const photoElem = document.createElement('img');
-    
+    const progressContainer = document.createElement('div');
+    const progressLine = document.createElement('div');
+    const progressValue = document.createElement('p');
 
 
     idElem.innerText = `ID: ${id}`;
@@ -70,14 +72,20 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo}){
     lastNameElem.innerText = `last name: ${last_name}`;
     ageElem.innerText = `age: ${age}`;
     salaryElem.innerText = `Salary: ${rate * days}`;
+    progressValue.innerText = progress + '%';
     
 
     photoElem.setAttribute('src', photo);
     photoElem.setAttribute('alt', "photo of worker");
 
     container.classList.add('container');
+    progressContainer.classList.add('progress-container');
+    progressLine.classList.add('progress-line');
+    progressLine.style.width = progress + '%';
+    progressValue.classList.add('progress-value');
 
-    container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem);
+    progressContainer.append(progressLine, progressValue);
+    container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem, progressContainer);
     rootElem.append(container);
 })
 
