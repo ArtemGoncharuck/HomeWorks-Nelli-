@@ -8,7 +8,6 @@ const workers = [
       days: 15,
       photo: "https://reqres.in/img/faces/12-image.jpg",
       progress: 50,
-      email: "hello@gmail.com",
     },
   
     {
@@ -20,7 +19,6 @@ const workers = [
       days: 22,
       photo: "https://reqres.in/img/faces/4-image.jpg",
       progress: 10,
-      email: "hello@gmail.com",
     },
   
     {
@@ -32,7 +30,6 @@ const workers = [
       days: 10,
       photo: "https://reqres.in/img/faces/10-image.jpg",
       progress: 75,
-      email: "hello@gmail.com",
     },
   
     {
@@ -44,15 +41,20 @@ const workers = [
       days: 17,
       photo: "https://reqres.in/img/faces/2-image.jpg",
       progress: 30,
-      email: "hello@gmail.com",
     },
   ];
   
-  
+  //Задан массив объектов workers. Выведите на экран
+  //карточки со следующей информацией по всем работникам:
+  //ID, Имя, Фамилия, Возраст, Зарплата, фото.
+  //Зарплата рассчитывается через умножение ставки на 
+  //количество дней. Карточки должны включать отображение 
+  //фотографии. Примените стили к карточкам: 
+  //width, padding, border, background-color
 
 const rootElem = document.querySelector('#root');
 
-workers.forEach(function({id, first_name, last_name, age, rate, days, photo, email}){
+workers.forEach(function({id, first_name, last_name, age, rate, days, photo}){
     const container = document.createElement('div');
     const idElem = document.createElement('p');
     const firstNameElem = document.createElement('p');
@@ -60,7 +62,7 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo, ema
     const ageElem = document.createElement('p');
     const salaryElem = document.createElement('p');
     const photoElem = document.createElement('img');
-    const emailElem = document.createElement('a');
+    
 
 
     idElem.innerText = `ID: ${id}`;
@@ -68,23 +70,17 @@ workers.forEach(function({id, first_name, last_name, age, rate, days, photo, ema
     lastNameElem.innerText = `last name: ${last_name}`;
     ageElem.innerText = `age: ${age}`;
     salaryElem.innerText = `Salary: ${rate * days}`;
-    emailElem.innerText = email;
+    
 
     photoElem.setAttribute('src', photo);
     photoElem.setAttribute('alt', "photo of worker");
-    emailElem.setAttribute('href', `mailto: ${email}`);
 
-    container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem, emailElem);
+    
+
+    container.append(idElem, firstNameElem, lastNameElem, ageElem, salaryElem, photoElem);
     rootElem.append(container);
 })
 
-//Новый комментарий
 
-//Задан массив объектов workers. Выведите на экран
-  //карточки со следующей информацией по всем работникам:
-  //ID, Имя, Фамилия, Возраст, Зарплата, фото.
-  //Зарплата рассчитывается через умножение ставки на 
-  //количество дней. Карточки должны включать отображение 
-  //фотографии. Примените стили к карточкам: 
-  //width, padding, border, background-color
+
 
